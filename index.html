@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idk</title>
+</head>
+<style>
+    body{
+         background-image:url(rose\ bg.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+    .name{
+        font-size: 25px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgb(255, 177, 177);
+    }
+    .account{
+        color: rgb(255, 105, 105);
+    border-radius: 25px;
+    background-color: rgb(255, 197, 197);
+    opacity: 85%;
+    border: none;
+    cursor: pointer;
+     padding: 12px;
+    }
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 65px;
+    }
+    h1{
+        font-size: 45px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        margin: 5px;
+        font-family: italic;
+    }
+    .pera{
+        color: white;
+    font-size: 22.5px;
+    margin: 5px;
+    }
+    .book{
+         background-color: rgb(255, 176, 31);
+    color: white;
+    font-size: 20px;
+    padding-left: 125px;
+    padding-right: 125px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition-duration: 0.5;
+    }
+    .book:hover{
+        scale: 1.1;
+    }
+    .review{
+          background-color: rgb(255, 176, 31);
+    color: white;
+    font-size: 20px;
+    padding-left: 115px;
+    padding-right: 115px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 3px;
+    cursor: pointer;
+    transition-duration: 0.5;
+    }
+    .review:hover{
+        scale: 1.1;
+    }
+    .services{
+           background-color: rgb(255, 176, 31);
+    color: white;
+    font-size: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 3px;
+    cursor: pointer;
+    transition-duration: 0.5;
+    }
+    .services:hover{
+        scale: 1.1;
+    }
+    footer{
+       text-align: center;
+        padding: 20px;
+
+    }
+    .credits{
+        display: inline-block;
+         background-color: rgb(31, 154, 255);
+         color: white;
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 100px;
+    }
+    .overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: flex-start; 
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; 
+}
+
+.overlay1.show1 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay1-content {
+   background: rgb(255, 223, 223);
+    padding: 20px 40px;        
+    width: 300px;              
+    height: 100vh;             
+    box-sizing: border-box;    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 85%;
+    transition: 10s;
+    border-radius: 25px;
+}
+img{
+    border-radius: 50%;
+    size: 30px;
+}
+.close-btn1{
+    margin-top: 125%;
+    margin-left: 25px;
+    padding: 20px 80px;
+    background-color: red;
+    border-radius: 25px;
+}
+.user{
+    font-family: italic;
+    font-size: 40px;
+    font-weight: 300;
+    border-radius: 25px;
+    border: 3px solid black;
+    padding: 3px 8px;
+    margin-left: -35px;
+    margin-top: 12px;
+}
+.dob{
+    font-family: italic;
+    font-size: 40px;
+    font-weight: 300;
+    border-radius: 25px;
+    border: 3px solid black;
+    padding: 3px 8px;
+    margin-left: -35px;
+    margin-top: 12px;
+}
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center; 
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; 
+}
+
+.overlay2.show2 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay2-content {
+    background:  rgb(255, 223, 223);
+    padding: 20px;            
+    width: 300px;              
+    height: 50vh;             
+    box-sizing: border-box;    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;      
+    opacity: 75%;
+    transition: 0.3s ease;    
+    border-radius: 25px; 
+}
+
+.call {
+    text-align: center;       
+    font-size: 20px;          
+    font-weight: 500;
+    border-radius: 15px;
+    border: 3px solid black;
+    padding: 15px 10px;       
+    margin-top: 25px;         
+    width: 100%;              
+    box-sizing: border-box;
+}
+
+.close-btn2 {
+    margin-top: auto;         
+    margin-bottom: 30px;
+    padding: 15px 60px;
+    background-color: red;
+    color: white;             
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+</style>
+<body>
+    <header>
+        <h1 class="name">Lunar&Floralwellness</h1>
+        <button class="account">account</button>
+    </header>
+    <main>
+        <h1 class="heading">EMBRACE THE CALLM.</h1>
+        <h1 class="heading">FIND YOUR LIGHT.</h1>
+        <p class="pera">Discover curated botanical treasures,</p>
+        <p class="pera">guided meditation, and general beauty of natural cycles.</p>
+        <button class="book">book now</button>
+        <button class="services">what we offer?</button>
+        <button class="review">our reviews</button>
+    </main>
+    <footer>
+        <P class="credits">coded and designed by M. Saif</P>
+    </footer>
+    <div class="overlay1" id="myoverlay1">
+            <div class="overlay1-content">
+                <img src="https://i.pinimg.com/236x/ba/17/79/ba177909e597e913b6b41bb12102a2e9.jpg" alt="">
+                <div class="user">user name</div>
+                <div class="dob">date of birth</div>
+                <button class="close-btn1">close</button>
+            </div>
+        </div>  
+    <div class="overlay2" id="myoverlay2">
+            <div class="overlay2-content">
+                <div class="call">to book call on ("0331-00000000")</div>
+                <button class="close-btn2">close</button>
+            </div>
+        </div>    
+</body>
+<script>
+// ==================== OVERLAY 1: ACCOUNT ====================
+const openButton1 = document.querySelector('.account');
+const closeButton1 = document.querySelector('.close-btn1');
+const overlay1 = document.querySelector('#myoverlay1');
+
+openButton1.addEventListener('click', () => {
+  overlay1.classList.add('show1'); 
+});
+
+closeButton1.addEventListener('click', () => {
+  overlay1.classList.remove('show1');
+});
+
+overlay1.addEventListener('click', (event) => {
+  if (event.target === overlay1) {
+    overlay1.classList.remove('show1');
+  }
+});
+
+// ==================== OVERLAY 2: BOOK NOW ====================
+const openButton2 = document.querySelector('.book');
+const closeButton2 = document.querySelector('.close-btn2');
+const overlay2 = document.querySelector('#myoverlay2');
+
+openButton2.addEventListener('click', () => {
+  overlay2.classList.add('show2'); 
+});
+
+closeButton2.addEventListener('click', () => {
+  overlay2.classList.remove('show2');
+});
+
+overlay2.addEventListener('click', (event) => {
+  if (event.target === overlay2) {
+    overlay2.classList.remove('show2');
+  }
+});
+</script>
+</html>
