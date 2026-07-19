@@ -72,6 +72,7 @@
     margin-top: 25px;
     cursor: pointer;
     transition-duration: 0.5;
+    border-radius: 25px;
     }
     .book:hover{
         scale: 1.1;
@@ -87,6 +88,7 @@
     margin-top: 3px;
     cursor: pointer;
     transition-duration: 0.5;
+    border-radius: 25px;
     }
     .review:hover{
         scale: 1.1;
@@ -102,6 +104,7 @@
     margin-top: 3px;
     cursor: pointer;
     transition-duration: 0.5;
+    border-radius: 25px;
     }
     .services:hover{
         scale: 1.1;
@@ -249,6 +252,64 @@ img{
     border-radius: 25px;
     cursor: pointer;
 }
+.overlay3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center; 
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; 
+}
+
+.overlay3.show3 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay3-content {
+    background:  rgb(255, 223, 223);
+    padding: 20px;            
+    width: 300px;              
+    height: 80vh;             
+    box-sizing: border-box;    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;      
+    opacity: 75%;
+    transition: 0.3s ease;    
+    border-radius: 25px; 
+}
+.close-btn3 {
+    margin-top: auto;         
+    margin-bottom: 30px;
+    padding: 15px 60px;
+    background-color: red;
+    color: white;             
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.offers{
+   text-align: center;       
+    font-size: 20px;          
+    font-weight: 500;
+    border-radius: 15px;
+    border: 3px solid black;
+    padding: 10px 10px;       
+    margin-top: 25px;         
+    width: 100%;              
+    box-sizing: border-box;
+}
 </style>
 <body>
     <header>
@@ -280,7 +341,16 @@ img{
                 <div class="call">to book call on ("0331-00000000")</div>
                 <button class="close-btn2">close</button>
             </div>
-        </div>    
+        </div>
+    <div class="overlay3" id="myoverlay3">
+        <div class="overlay3-content">
+            <div class="offers">1. 1 hour meeting</div>
+            <div class="offers">2. home vist</div>
+            <div class="offers">3. outdoor meditation</div>
+            <div class="offers">4. online class</div>
+            <button class="close-btn3">close</button>
+        </div>
+    </div>    
 </body>
 <script>
 // ==================== OVERLAY 1: ACCOUNT ====================
@@ -320,5 +390,24 @@ overlay2.addEventListener('click', (event) => {
     overlay2.classList.remove('show2');
   }
 });
+// ==================== OVERLAY 3: offers ====================
+const openButton3 = document.querySelector('.services');
+const closeButton3 = document.querySelector('.close-btn3');
+const overlay3 = document.querySelector('#myoverlay3');
+
+openButton3.addEventListener('click', () => {
+  overlay3.classList.add('show3'); 
+});
+
+closeButton3.addEventListener('click', () => {
+  overlay3.classList.remove('show3');
+});
+
+overlay3.addEventListener('click', (event) => {
+  if (event.target === overlay3) {
+    overlay3.classList.remove('show3');
+  }
+});
+
 </script>
 </html>
