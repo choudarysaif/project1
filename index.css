@@ -121,6 +121,11 @@
             font-weight: bold;
             margin-top: 100px;
     }
+@media screen and (max-width: 480px) {
+  .credits{
+    margin-top: 150px;
+  }
+}
     .overlay1 {
   position: fixed;
   top: 0;
